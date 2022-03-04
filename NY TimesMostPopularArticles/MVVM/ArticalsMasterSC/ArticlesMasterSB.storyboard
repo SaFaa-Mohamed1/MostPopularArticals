@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QMj-cO-TGr">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--NY Times Most Popular Articles-->
+        <scene sceneID="92f-O2-wUg">
+            <objects>
+                <viewController title="NY Times Most Popular Articles" id="kwJ-GM-unb" customClass="ArticalsMasterVC" customModule="NY_TimesMostPopularArticles" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gYh-eu-Jed">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WR4-Xu-K8c">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="kwJ-GM-unb" id="hTy-jU-O0K"/>
+                                    <outlet property="delegate" destination="kwJ-GM-unb" id="Qws-oG-zIP"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="um2-Rt-ZuH"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="WR4-Xu-K8c" firstAttribute="leading" secondItem="um2-Rt-ZuH" secondAttribute="leading" id="0GW-bK-leS"/>
+                            <constraint firstItem="um2-Rt-ZuH" firstAttribute="bottom" secondItem="WR4-Xu-K8c" secondAttribute="bottom" id="AlL-At-r2l"/>
+                            <constraint firstItem="um2-Rt-ZuH" firstAttribute="trailing" secondItem="WR4-Xu-K8c" secondAttribute="trailing" id="Oqx-RY-kJX"/>
+                            <constraint firstItem="WR4-Xu-K8c" firstAttribute="top" secondItem="um2-Rt-ZuH" secondAttribute="top" id="lZd-3D-LMS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="NY Times Most Popular Articles" id="c2V-rG-aEm"/>
+                    <connections>
+                        <outlet property="tableView" destination="WR4-Xu-K8c" id="Cj4-Ev-ebK"/>
+                        <segue destination="hkY-oA-sWB" kind="show" identifier="showArticleDetail" id="n3m-GD-Lb4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Koz-EN-fpw" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="605.60000000000002" y="7.6461769115442282"/>
+        </scene>
+        <!--ArticlesDetailsSB-->
+        <scene sceneID="FfS-kA-9qL">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ArticlesDetailsSB" id="hkY-oA-sWB" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="aMM-Zh-73C"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HPY-yi-xdd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1260" y="-153"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KTS-Rm-i7P">
+            <objects>
+                <navigationController id="QMj-cO-TGr" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="q0v-Ye-Y1a">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="kwJ-GM-unb" kind="relationship" relationship="rootViewController" id="sCd-oG-hE7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DuV-Bx-dus" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-124" y="8"/>
+        </scene>
+    </scenes>
+</document>
